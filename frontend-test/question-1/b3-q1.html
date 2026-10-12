@@ -2,28 +2,46 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         Frontend Test Q1
     </title>
     <style>
-        menu {
-            background-color: #777;
-            padding: 10px;
-            text-align: center;
-            color: white;
+        * {
+            box-sizing: border-box;
+            margin: 0;
         }
 
         nav {
             float: left;
-            width: 5%;
-            height: 120px;
+            width: 10%;
+            height: 240px;
             background-color: gray;
-            padding: 20%;
+            padding: 50px;
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
+        }
+
+        menu {
+            float: left;
+            padding: 30px;
+            width: 90%;
+            background-color: darkgray;
+            height: 80px;
+            text-align: center;
+        }
+
+        content {
+            float: left;
+            padding: 50px;
+            width: 90%;
+            background-color: #f1f1f1;
+            height: 160px;
+            text-align: center;
         }
 
         section::after {
@@ -39,20 +57,36 @@
             text-align: center;
             color: white;
         }
+
+        @media (max-width: 600px) {
+
+            nav,
+            menu,
+            content {
+                width: 100%;
+                height: auto;
+            }
+        }
     </style>
 </head>
 
 <body>
     <section>
+        <nav>
+            <ul>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">contact us</a></li>
+                <li><a href="#">social media</a></li>
+            </ul>
+        </nav>
+
         <menu>
             <p>menu</p>
         </menu>
 
-        <nav>
-            <ul>
-                <p>sidebar</p>
-            </ul>
-        </nav>
+        <content>
+            <p>content</p>
+        </content>
     </section>
 
     <footer>
