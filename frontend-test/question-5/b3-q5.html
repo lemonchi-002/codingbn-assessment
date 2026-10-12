@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Multi-step Registration</title>
+    <style>
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .step-indicator {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .indicator {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #bbb;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .indicator.active {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: white;
+        }
+
+        .indicator.completed {
+            background: #15803d;
+            border-color: #15803d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registration</h1>
+
+    <form id="registrationForm">
+        <section class="step active">
+            <label for="name">Name:</label>
+            <input id="name" name="name" type="text" required>
+            <button type="button" class="next">Next</button>
+        </section>
+
+        <section class="step">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" required>
+            <button type="button" class="back">Back</button>
+            <button type="button" class="next">Next</button>
+        </section>
+
+        <section class="step">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            <button type="button" class="back">Back</button>
+            <button type="submit">Submit</button>
+        </section>
+    </form>
+    <br>
+    <div class="step-indicator" aria-label="Registration progress">
+        <span class="indicator active">1</span>
+        <span class="indicator">2</span>
+        <span class="indicator">3</span>
+    </div>
+
+    <script src="stepLogic.js"></script>
+
+</body>
+
+</html>
